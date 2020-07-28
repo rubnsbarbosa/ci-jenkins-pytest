@@ -1,19 +1,15 @@
 pipeline {
- 
-    agent any
-
+    agent { docker { image 'python:3.8.5' } }
     stages {
-        stage("build") {
+        stage('build') {
             steps {
-                sh "pip install -r requirements.txt"
+                sh 'pip install -r requirements.txt'
             }
         }
-
-        stage("Unit test") {
+        stage('Unit test') {
             steps {
-                sh "python test_calculator.py"
+                sh 'pytest'
             }
         }
     }
-
 }
