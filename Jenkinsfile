@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage("Unit test") {
             steps {
-                sh "pytest"
+                sh "python test_calculator.py"
             }
         }
     }
