@@ -1,10 +1,12 @@
 pipeline {
  
     agent any
- 
+
     stages {
         stage("Unit test") {
-            steps sh "pytest"
+            steps {
+                sh "pytest"
+            }
         }
     }
 
